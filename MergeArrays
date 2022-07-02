@@ -1,0 +1,77 @@
+package selenium;
+
+public class DataMaxIntership {
+	
+	static void merge_arrays(int [] array_1, int [] array_2) {
+		
+		int[] merge_array = new int [array_1.length+array_2.length];
+	    merge_array[0]=array_1[0];
+		int size = 1;
+		
+		
+		 for(int i=1;i<array_1.length;i++) 
+		 {     
+	    	int index=0; 
+			for(int j=0;j<i;j++) 
+			{  
+				
+			   if(array_1[j] != array_1[i])
+			   {
+					index++;
+					
+			   }
+				if(index==i) 
+				{
+					merge_array[size]=array_1[i];
+					size++;
+				}
+			}
+			
+		}
+	     
+	     int merge_size=size;
+	     
+	     for(int m=0;m<array_2.length;m++) 
+	     {     
+		    	int index=0;
+				for(int n=0;n<merge_size;n++) 
+				{  
+					
+				   if(array_2[m] != merge_array[n]) 
+				   {
+						index++;
+						
+				   }
+					if(index==merge_size) 
+					{
+						merge_array[size]=array_2[m];
+						size++;
+					}
+				}
+				
+			}
+	     
+	    
+	     
+	     //printing the elements of array
+	     
+	     for(int i=0;i<size;i++)
+	     {
+	    	 System.out.print(merge_array[i] + ",");
+	    	 
+	     }
+	}
+	
+	
+	public static void main(String [] args) {
+		
+	  int[] array_a = {1,2,3,4,5};
+	  int[] array_b = {1,2,3,4,5};
+	  
+	  merge_arrays(array_a,array_b);
+	  
+	  
+	  
+	}
+
+}
